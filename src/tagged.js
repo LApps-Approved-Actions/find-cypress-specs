@@ -5,8 +5,7 @@ function pickTaggedTests(tests, tag) {
   if (!Array.isArray(tests)) {
     return false
   }
-  if (!Array.isArray(tag)) {
-    const tags = Array.isArray(tag) ? tag : parseTagsGrep(tag) 
+  const tags = Array.isArray(tag) ? tag : parseTagsGrep(tag) 
   const filteredTests = tests.filter((test) => {
     if (test.type === 'test') {
       return shouldTestRunTags(tags, test.tags)
