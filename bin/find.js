@@ -81,7 +81,8 @@ if (args['--names'] || args['--tags']) {
           .map((s) => s.trim())
           .filter(Boolean)
         debug('filtering all tests by tag "%o"', splitTags)
-        pickTaggedTestsFrom(jsonResults, splitTags)
+        // pickTaggedTestsFrom(jsonResults, splitTags)
+        pickTaggedTestsFrom(jsonResults, args['--tagged'])
         // recompute the number of tests
         addCounts(jsonResults)
       }
