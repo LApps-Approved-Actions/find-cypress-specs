@@ -7,6 +7,8 @@ function pickTaggedTests(tests, tag) {
   }
   console.log('pickTaggedTests tag: ' + tag.toString())
 
+  console.log('pickTaggedTests tag type: ' + typeof(tag))
+  
   const tags = Array.isArray(tag) ? parseTagsGrep(tag) : tag
   console.log('pickTaggedTests tags: ' + tags.toString())
 
