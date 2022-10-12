@@ -11,6 +11,7 @@ function pickTaggedTests(tests, tag) {
   
   const tags = Array.isArray(tag) ? parseTagsGrep(tag) : tag
   console.log('pickTaggedTests tags: ' + tags.toString())
+  console.log('pickTaggedTests tags type: ' + typeof(tags))
 
   const filteredTests = tests.filter((test) => {
     if (test.type === 'test') {
