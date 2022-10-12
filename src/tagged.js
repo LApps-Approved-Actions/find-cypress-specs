@@ -5,13 +5,7 @@ function pickTaggedTests(tests, tag) {
   if (!Array.isArray(tests)) {
     return false
   }
-  console.log('pickTaggedTests tag: ' + tag.toString())
-
-  console.log('pickTaggedTests tag type: ' + typeof(tag))
-  
   const tags = Array.isArray(tag) ? tag : parseTagsGrep(tag) 
-  console.log('pickTaggedTests tags: ' + tags.toString())
-  console.log('pickTaggedTests tags type: ' + typeof(tags))
 
   const filteredTests = tests.filter((test) => {
     if (test.type === 'test') {
@@ -64,7 +58,6 @@ function pickTaggedTestsFrom(json, tag) {
  * @param {string} s Tags string like "@tag1+@tag2"
  */
 function parseTagsGrep(s) {
-  console.log('parseTagsGrep in: ' + s.toString())
   if (!s) {
     return []
   }
@@ -129,12 +122,12 @@ function shouldTestRunTags(parsedGrepTags, tags = []) {
 
       return tags.includes(p.tag)
     })
-    console.log('every part matched %o?', orPart, everyAndPartMatched)
+    // console.log('every part matched %o?', orPart, everyAndPartMatched)
 
     return everyAndPartMatched
   })
 
-  console.log('onePartMatched', onePartMatched)
+  // console.log('onePartMatched', onePartMatched)
   return onePartMatched
 }
 

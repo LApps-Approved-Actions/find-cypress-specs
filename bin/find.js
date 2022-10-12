@@ -75,13 +75,7 @@ if (args['--names'] || args['--tags']) {
 
     if (args['--names']) {
       if (args['--tagged']) {
-        // filter all collected tests to those that have the given tag(s)
-        const splitTags = args['--tagged']
-          .split(',')
-          .map((s) => s.trim())
-          .filter(Boolean)
-        debug('filtering all tests by tag "%o"', splitTags)
-        // pickTaggedTestsFrom(jsonResults, splitTags)
+        debug('filtering all tests by tag "%o"', args['--tagged'])
         pickTaggedTestsFrom(jsonResults, args['--tagged'])
         // recompute the number of tests
         addCounts(jsonResults)
