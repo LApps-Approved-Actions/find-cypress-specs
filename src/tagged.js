@@ -9,7 +9,7 @@ function pickTaggedTests(tests, tag) {
 
   console.log('pickTaggedTests tag type: ' + typeof(tag))
   
-  const tags = Array.isArray(tag) ? parseTagsGrep(tag) : tag
+  const tags = Array.isArray(tag) ? tag : parseTagsGrep(tag) 
   console.log('pickTaggedTests tags: ' + tags.toString())
   console.log('pickTaggedTests tags type: ' + typeof(tags))
 
