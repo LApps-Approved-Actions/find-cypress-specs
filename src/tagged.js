@@ -73,7 +73,7 @@ function parseTagsGrep(s) {
 
   // top level split - using space or comma, each part is OR
   const ORS = s
-    .split(/[ ,]/)
+    .split(/[,]/)
     // remove any empty tags
     .filter(Boolean)
     .map((part) => {
